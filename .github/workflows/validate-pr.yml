@@ -23,10 +23,10 @@ jobs:
       run: npm install tsx @actions/core @actions/github
 
     - name: Validate file structure
-      run: tsx .github/workflows/scripts/validate-fs.ts
+      run: npx tsx .github/workflows/scripts/validate-fs.ts
 
     - name: Validate metadata
-      run: tsx .github/workflows/scripts/validate-metadata.ts
+      run: npx tsx .github/workflows/scripts/validate-metadata.ts
 
     - name: Validate logo
-      run: tsx .github/workflows/scripts/validate-logo.ts
+      run: npx tsx .github/workflows/scripts/validate-logo.ts
