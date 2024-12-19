@@ -4,7 +4,7 @@
   "tags": ["vault", "token:rETH"],
   "links": [
     {
-      "type": "wrong-page",
+      "type": "explorer",
       "name": "Etherscan",
       "url": "https://holesky.etherscan.io/address/0x2c082c4a1b9939087906cee2fe0e6780a84331d6"
     },
