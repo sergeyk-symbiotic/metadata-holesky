@@ -1,4 +1,4 @@
-const contributionGuidelines = `Please, follow the [contribution guidelines](../../../../README.md).`;
+const contributionGuidelines = `Please, follow the [contribution guidelines](../../../README.md).`;
 
 export const notAllowedChanges = (files: string[]) =>
   `We detected changes in the pull request that are not allowed. ${contributionGuidelines}
