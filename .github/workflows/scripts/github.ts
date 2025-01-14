@@ -22,6 +22,8 @@ export type Review = {
   comments?: ReviewComment[];
 };
 
+export const repoPath = [github.context.repo.owner, github.context.repo.repo].join('/');
+
 export const addComment = async (body: string) => {
   const { owner, repo, number } = github.context.issue;
 
