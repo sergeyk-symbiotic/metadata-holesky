@@ -1,37 +1,35 @@
-const contributionGuidelines = `Please, follow the [contribution guidelines](/README.md).`;
+import { repoPath } from './github';
+
+const contributionGuidelines = `Please, follow the [contribution guidelines](https://github.com/${repoPath}/blob/main/README.md).`;
+
+type JSONSchemaError = {
+  line: number;
+  message: string;
+};
 
 export const notAllowedChanges = (files: string[]) =>
   `We detected changes in the pull request that are not allowed. ${contributionGuidelines}
 
-  **Not allowed changes:**
+  **Not allowed files:**
   ${files.map((file) => `- ${file}`).join('\n')}
 `;
 
 export const onlyOneEntityPerPr = (dirs: string[]) =>
   `It is not allowed to change more than one entity in a single pull request. ${contributionGuidelines}
 
-  **Changed entities:**
+  **Entities:**
   ${dirs.map((file) => `- ${file}`).join('\n')}
 `;
 
-export const invalidStructure = (entityDir: string, files: string[]) =>
-  `The sctucture of the entity folder is invalid. ${contributionGuidelines}
+export const noInfoJson = (entityDir: string, files: string[]) =>
+  `The entity folder should have \`info.json\` file. ${contributionGuidelines}`;
 
-  **Current structure:**
-  - ${entityDir}
-    ${files.map((file) => `- ${file}`).join('\n')}
-`;
+export const invalidInfoJson = (path: string, erros: JSONSchemaError[]) =>
+  `The \`info.json\` file is invalid. ${contributionGuidelines}`;
 
-export const invalidInfoJson = (errors: string[]) =>
-  `The info.json file is invalid. ${contributionGuidelines}
-
-  **Errors:**
-  ${errors.filter(Boolean).map((error) => `- ${error}`).join('\n')}
-`;
-
-export const invalidLogo = (errors: string[]) =>
+export const invalidLogo = (path: string, errors: string[]) =>
   `The logo image is invalid. ${contributionGuidelines}
 
-  **Errors:**
-  ${errors.filter(Boolean).map((error) => `- ${error}`).join('\n')}
+  **Unmet requirements:**
+  ${errors.map((error) => `- ${error}`).join('\n')}
 `;
