@@ -15,6 +15,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
 
     - name: Detect changed files
       uses: yumemi-inc/changed-files@v3
