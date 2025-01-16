@@ -1,0 +1,22 @@
+{
+  "name": "operator name 3",
+  "description": "operator description 3 (test)",
+  "tags": ["operator"],
+  "links": [
+    {
+      "type": "website4",
+      "name": "Website",
+      "url": "https://google.com"
+    },
+    {
+      "type": "website",
+      "name": "X",
+      "url": "http://twitter.com/"
+    },
+    {
+      "type": "website",
+      "name": "Twitch",
+      "url": "https://www.twitch.tv/"
+    }
+  ]
+}
