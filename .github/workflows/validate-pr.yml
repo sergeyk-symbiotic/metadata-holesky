@@ -25,7 +25,7 @@ jobs:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
 
       - name: Validate
-        uses: symbioticfi/metadata-validation-scripts@main
+        uses: symbioticfi/metadata-validation-scripts@SYMB-282-validate-tokens-in-main
         with:
           files: ${{ steps.changes.outputs.files }}
           issue: ${{ github.event.number }}
